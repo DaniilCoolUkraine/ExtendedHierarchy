@@ -1,0 +1,11 @@
+{
+  "name": "com.daniilcoolukraine.extendedhierarchy",
+  "version": "1.0.0",
+  "displayName": "Extended Hierarchy",
+  "description": "Package contains editor extensions, like icons and toggles in hierarchy",
+  "author": {
+    "name": "DaniilCoolUkraine"
+  },
+  "changelogUrl": "",
+  "documentationUrl": ""
+}
