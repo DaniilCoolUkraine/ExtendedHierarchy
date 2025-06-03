@@ -15,13 +15,15 @@ namespace ProjectSetupTools.Editor.ExtendedHierarchy
         {
             EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyWindowItemOnGUI;
             EditorApplication.update += OnEditorUpdate;
+            EditorWindow.windowFocusChanged += () =>
+            {
+                if (EditorWindow.focusedWindow != null && EditorWindow.focusedWindow.GetType().Name == "SceneHierarchyWindow")
+                    editorWindow = EditorWindow.focusedWindow;
+            };
         }
 
         private static void OnEditorUpdate()
         {
-            if (editorWindow == null)
-                editorWindow = EditorWindow.GetWindow(System.Type.GetType("UnityEditor.SceneHierarchyWindow,UnityEditor"));
-
             hierarchyHasFocus = EditorWindow.focusedWindow != null && EditorWindow.focusedWindow == editorWindow;
         }
 
